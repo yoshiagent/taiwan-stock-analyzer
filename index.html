@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>台股產業分析</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ── Header ─────────────────────────────────────────────────────────── -->
+<header>
+  <div class="header-inner">
+    <div class="logo">📊 台股<span>產業分析</span></div>
+    <div class="search-bar">
+      <input
+        id="stock-input"
+        type="text"
+        placeholder="輸入股票代碼（如 2330）"
+        maxlength="6"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <button id="search-btn">搜尋</button>
+    </div>
+  </div>
+</header>
+
+<!-- ── Search history chips ───────────────────────────────────────────── -->
+<div id="history-wrap" class="history-wrap" style="display:none"></div>
+
+<!-- ── Main content ───────────────────────────────────────────────────── -->
+<main>
+
+  <!-- Welcome screen -->
+  <div id="welcome" class="welcome">
+    <h2>台股產業分析平台</h2>
+    <p>輸入台灣股市代碼，即可查看公司概況、估值指標、歷史走勢與同業比較</p>
+    <div class="example-codes">
+      <span class="chip" title="台積電">2330 台積電</span>
+      <span class="chip" title="聯發科">2454 聯發科</span>
+      <span class="chip" title="鴻海">2317 鴻海</span>
+      <span class="chip" title="中鋼">2002 中鋼</span>
+      <span class="chip" title="國泰金">2882 國泰金</span>
+      <span class="chip" title="台灣大">3045 台灣大</span>
+    </div>
+  </div>
+
+  <!-- Results grid (hidden until search) -->
+  <div id="results" class="results-grid" style="display:none">
+
+    <!-- ── Left column ─────────────────────────────────────────────────── -->
+    <div class="col-main">
+
+      <!-- Company overview -->
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>公司概況</div>
+        <div id="card-company"></div>
+      </div>
+
+      <!-- Trading summary -->
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>今日行情</div>
+        <div id="card-trading"></div>
+      </div>
+
+      <!-- Price chart -->
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>近期股價走勢（本月）</div>
+        <div class="chart-container" id="card-price-chart"></div>
+      </div>
+
+      <!-- Valuation -->
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>估值指標</div>
+        <div id="card-valuation"></div>
+      </div>
+
+      <!-- Revenue chart -->
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>月營收趨勢（近6個月）</div>
+        <div class="rev-container" id="card-revenue"></div>
+      </div>
+
+    </div>
+
+    <!-- ── Right column ────────────────────────────────────────────────── -->
+    <div class="col-side">
+
+      <!-- Industry index -->
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>類股指數</div>
+        <div id="card-industry"></div>
+      </div>
+
+      <!-- Peer comparison -->
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>同業比較（點擊切換）</div>
+        <div id="card-peers"></div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<!-- ── Scripts ─────────────────────────────────────────────────────────── -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="js/api.js?v=4"></script>
+<script src="js/charts.js?v=4"></script>
+<script src="js/ui.js?v=4"></script>
+<script src="js/app.js?v=4"></script>
+
+</body>
+</html>
