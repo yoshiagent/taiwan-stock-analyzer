@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/api/tpex_companies", "destination": "/api/tpex_companies" },
+    { "source": "/api/companies",      "destination": "/api/companies" },
+    { "source": "/api/valuations",     "destination": "/api/valuations" },
+    { "source": "/api/revenue",        "destination": "/api/revenue" },
+    { "source": "/api/tpex",           "destination": "/api/tpex" }
+  ]
+}
